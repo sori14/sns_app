@@ -1,0 +1,133 @@
+require 'rails_helper'
+
+RSpec.describe User, type: :model do
+
+  before do
+    @user = FactoryBot.build(:user)
+  end
+
+  describe "presence" do
+    it "値が入ってる場合" do
+      expect(@user).to be_valid
+    end
+
+    it "emailが空白の場合" do
+      @user.email = " "
+      expect(@user).to be_invalid
+    end
+
+    it "passwordが6文字以上の場合" do
+      # aが6文字のパスワードのテスト
+      @user.password = @user.password_confirmation = "a" * 6
+      expect(@user).to be_valid
+    end
+
+    it "passwordが空白の場合" do
+      # 空白が6文字のパスワードのテスト
+      @user.password = @user.password_confirmation = " " * 6
+      expect(@user).to be_invalid
+    end
+  end
+
+  describe "email format" do
+    context "when email format is valid" do
+      it "正しいemailのフォーマット" do
+        address = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+        address.each do |valid_address|
+          expect(FactoryBot.build(:user, email: valid_address)).to be_valid
+        end
+      end
+    end
+
+    context "when email format is invalid" do
+      it "間違ったemailのフォーマット" do
+        addresses = %w[user@foo,com user_at_foo.org example.user@foo.foo@bar_baz.com foo@bar+baz.com]
+        addresses.each do |invalid_address|
+          expect(FactoryBot.build(:user, email: invalid_address)).to be_invalid
+        end
+      end
+    end
+
+    it "emailを小文字に返還後の値と大文字を混ぜて登録されたアドレスが同じか" do
+      @user.email = "Foo@ExAMPle.COm"
+      @user.save!
+      expect(@user.reload.email).to eq "foo@example.com"
+    end
+  end
+
+  describe "unique" do
+    context "when email addresses should be unique" do
+      it "一意性が正しく機能しているか" do
+        # @userを複製して、格納する => dupメソッドで同属性のモデルを生成する
+        duplicate_user = @user.dup
+        duplicate_user.email = @user.email.upcase
+        # 最初にモデルをDBに格納する
+        @user.save!
+        expect(duplicate_user).to be_invalid
+      end
+    end
+  end
+
+
+  describe "password length" do
+    context "パスワードが6桁の時" do
+      it "正しい" do
+        @user = FactoryBot.build(:user, password: "a" * 6, password_confirmation: "a" * 6)
+        expect(@user).to be_valid
+      end
+    end
+
+    context "パスワードが5桁の時" do
+      it "正しくない" do
+        @user = FactoryBot.build(:user, password: "a" * 5, password_confirmation: "a" * 5)
+        expect(@user).to be_invalid
+      end
+    end
+  end
+
+  describe "カラムがあるかどうか" do
+    it "should respond to 'name'" do
+      expect(@user).to respond_to(:name)
+    end
+
+    it "should respond to 'email'" do
+      expect(@user).to respond_to(:email)
+    end
+
+    it "should respond to 'password_digest'" do
+      expect(@user).to respond_to(:password_digest)
+    end
+
+    it "should respond to 'password'" do
+      expect(@user).to respond_to(:password)
+    end
+
+    it "should respond to 'password_confirmation'" do
+      expect(@user).to respond_to(:password_confirmation)
+    end
+
+    it "should respond to 'authenticate'" do
+      expect(@user).to respond_to(:authenticate)
+    end
+  end
+
+  describe "return value of authenticate method" do
+    before {@user.save}
+    let(:found_user) {User.find_by(email: @user.email)}
+    it "with valid password" do
+      expect(@user).to eq found_user.authenticate(@user.password)
+    end
+    let(:user_for_invalid_password) {found_user.authenticate("invalid")}
+    it "with invalid password" do
+      expect(@user).to_not eq :user_for_invalid_password
+      expect(user_for_invalid_password).to be_false
+    end
+  end
+
+  # 異なるブラウザでログアウトした場合に、cokkiesメソッドでエラーが起きるテスト
+  describe "authenticated? should return false for a user with nil digest" do
+    it "is invalid without remember_digest" do
+      expect(@user.authenticated?(:remember, '')).to eq false
+    end
+  end
+end

@@ -3,10 +3,29 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
-# Rspec
+# Rspecのコマンドの実行
 gem 'spring-commands-rspec'
-#日本語化
+# エラーメッセージの日本語化
 gem 'rails-i18n'
+
+# Bootstrap4
+gem 'bootstrap'
+# jQuery(Bootstrapで必要)
+gem 'jquery-rails'
+
+# bcrypt
+gem 'bcrypt', '3.1.11'
+
+gem 'faker'
+
+# ページネーション
+gem 'will_paginate', '3.1.7'
+gem 'will_paginate-bootstrap4'
+
+# 画像投稿
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
@@ -27,16 +46,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -44,6 +53,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Rubyのコンソール
+  gem 'pry-rails'
+  # デバッカー
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
+
+  # IDEのデバッカー
+  gem 'ruby-debug-ide'
+  gem 'debase'
 end
 
 group :development do
@@ -64,10 +84,17 @@ group :test do
 
   # Rspec
   gem 'rspec-rails'
+
+  # FactoryBot(テストデータの生成ツール)
   gem 'factory_bot_rails'
-  gem 'faker'
+  # テスト後にDBをクリアする
   gem 'database_cleaner'
+
   gem 'launchy'
+
+  # assignsメソットの使用のため
+  # コントローラー内のインスタンス変数にアクセスできる
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

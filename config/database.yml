@@ -17,4 +17,3 @@ test:
 production:
   <<: *default
   database: sns_app_production
-
