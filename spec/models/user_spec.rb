@@ -6,6 +6,13 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.build(:user)
   end
 
+  describe "column" do
+    it 'should be column' do
+      expect(@user).to respond_to(:admin)
+      expect(@user).to respond_to(:microposts)
+    end
+  end
+
   describe "presence" do
     it "値が入ってる場合" do
       expect(@user).to be_valid
@@ -120,7 +127,7 @@ RSpec.describe User, type: :model do
     let(:user_for_invalid_password) {found_user.authenticate("invalid")}
     it "with invalid password" do
       expect(@user).to_not eq :user_for_invalid_password
-      expect(user_for_invalid_password).to be_false
+      expect(user_for_invalid_password).to be_falsey
     end
   end
 
@@ -128,6 +135,38 @@ RSpec.describe User, type: :model do
   describe "authenticated? should return false for a user with nil digest" do
     it "is invalid without remember_digest" do
       expect(@user.authenticated?(:remember, '')).to eq false
+    end
+  end
+
+  describe "micropost associations" do
+    before {@user.save}
+    let!(:old_micropost) {
+      FactoryBot.create(:micropost, user: @user, created_at: 1.day.ago)
+    }
+    let!(:newer_micropost) {
+      FactoryBot.create(:micropost, user: @user, created_at: 1.hour.ago)
+    }
+    let(:unfollowed_micropost) {
+      FactoryBot.create(:micropost, user: FactoryBot.create(:user))
+    }
+
+    it "should have the right microposts in the right order" do
+      expect(@user.microposts.to_a).to eq [newer_micropost, old_micropost]
+    end
+
+    it 'should destroy associated microposts' do
+      microposts = @user.microposts.to_a
+      @user.destroy
+      expect(microposts).not_to be_empty
+      microposts.each do |micropost|
+        expect(Micropost.where(id: micropost.id)).to be_empty
+      end
+    end
+
+    it 'should have my microposts' do
+      expect(@user.feed).to include(old_micropost)
+      expect(@user.feed).to include(newer_micropost)
+      expect(@user.feed).to_not include(unfollowed_micropost)
     end
   end
 end
