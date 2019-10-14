@@ -10,6 +10,8 @@ module SnsApp
   class Application < Rails::Application
     config.load_defaults 5.2
     config.i18n.default_locale = :ja
+    # ブラウザのJS設定が無効の時にHTMLに遷移する
+    config.action_view.embed_authenticity_token_in_remote_forms = true
 
     config.generators do |g|
       g.test_framework :rspec,
@@ -17,7 +19,6 @@ module SnsApp
                        view_specs: false,
                        helper_specs: false,
                        routing_specs: false,
-                       controller_specs: true,
                        request_specs: true
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end

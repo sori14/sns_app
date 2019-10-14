@@ -12,14 +12,4 @@ RSpec.describe "User sign up", type: :system do
     expect(page).to have_content "Please check your email to activate your account"
     expect(current_path).to eq root_path
   end
-
-  it "mail" do
-    mail = ActionMailer::Base.deliveries.last
-
-    aggregate_failures do
-      expect(mail.to).to eq ["test@example.com"]
-      expect(mail.from).to eq ["noreply@example.com"]
-      expect(mail.subject).to eq "Account activation"
-    end
-  end
 end

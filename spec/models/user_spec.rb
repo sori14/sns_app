@@ -6,10 +6,30 @@ RSpec.describe User, type: :model do
     @user = FactoryBot.build(:user)
   end
 
-  describe "column" do
+  describe 'respond_to' do
     it 'should be column' do
       expect(@user).to respond_to(:admin)
       expect(@user).to respond_to(:microposts)
+    end
+
+    it 'feed method should work normally' do
+      expect(@user).to respond_to(:feed)
+    end
+
+    it 'relationship method should work normally' do
+      expect(@user).to respond_to(:active_relationships)
+      expect(@user).to respond_to(:passive_relationships)
+    end
+
+    it 'following and followed method should work normally' do
+      expect(@user).to respond_to(:following)
+      expect(@user).to respond_to(:followers)
+    end
+
+    it 'follow and unfollow method should work normally' do
+      expect(@user).to respond_to(:follow)
+      expect(@user).to respond_to(:unfollow)
+      expect(@user).to respond_to(:following?)
     end
   end
 
@@ -167,6 +187,74 @@ RSpec.describe User, type: :model do
       expect(@user.feed).to include(old_micropost)
       expect(@user.feed).to include(newer_micropost)
       expect(@user.feed).to_not include(unfollowed_micropost)
+    end
+  end
+
+  describe 'following' do
+    let(:other_user) {FactoryBot.create(:user)}
+    before do
+      @user.save
+      @user.follow(other_user)
+    end
+
+    it 'should have followed other_user' do
+      expect(@user.following?(other_user)).to be_truthy
+      expect(@user.following).to include(other_user)
+    end
+
+    describe 'and unfollowing' do
+      before {@user.unfollow(other_user)}
+
+      it "should not have followed other_user" do
+        expect(@user.followers).to_not include(other_user)
+      end
+    end
+
+    # 逆リレーションシップのテスト
+    describe 'followed user' do
+      it 'followed user' do
+        expect(other_user.followers).to include(@user)
+      end
+    end
+  end
+
+  describe "micropost associations" do
+    before {@user.save}
+    let(:older_micropost) {
+      FactoryBot.create(:micropost, user: @user, created_at: 1.day.ago)
+    }
+    let(:newer_micropost) {
+      FactoryBot.create(:micropost, user: @user, created_at: 1.hour.ago)
+    }
+
+    describe "status" do
+      let(:unfollowed_micropost) {
+        FactoryBot.create(:micropost, user: FactoryBot.create(:user))
+      }
+      let(:followed_user) {FactoryBot.create(:user)}
+
+      before {
+        @user.follow(followed_user)
+        3.times {followed_user.microposts.create(content: "Lorem ipsum")}
+      }
+
+      it "should include newer_micropost" do
+        expect(@user.feed).to include(newer_micropost)
+      end
+
+      it "should include older_micropost" do
+        expect(@user.feed).to include(older_micropost)
+      end
+
+      it "should not include unfollowed_micropost" do
+        expect(@user.feed).to_not include(unfollowed_micropost)
+      end
+
+      it "should include followed_micropost" do
+        followed_user.microposts.each do |micropost|
+          expect(@user.feed).to include(micropost)
+        end
+      end
     end
   end
 end

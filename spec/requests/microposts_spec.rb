@@ -2,14 +2,20 @@ require 'rails_helper'
 
 RSpec.describe "Micropost", type: :request do
   describe 'in the Microposts controller' do
-    it 'submitting to the create action' do
-      post microposts_path
-      expect(response).to redirect_to login_path
+    describe "submitting to the create action" do
+      before {post microposts_path}
+
+      it "should redirect login_path" do
+        expect(response).to redirect_to login_path
+      end
     end
 
-    it 'submitting to the destroy action' do
-      delete micropost_path(FactoryBot.create(:micropost))
-      expect(response).to redirect_to login_path
+    describe "submitting to the destroy action" do
+      before {delete micropost_path(FactoryBot.create(:micropost))}
+
+      it "should redirect login_path" do
+        expect(response).to redirect_to login_path
+      end
     end
   end
 end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
-  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy, :following, :followers]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:destroy]
 
@@ -8,7 +8,6 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-
   # => app/views/users/new.html.erb
 
   # GET /users/:id
@@ -16,7 +15,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
-
   # => app/views/users/show.html.erb
 
   # POST /users
@@ -59,6 +57,20 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
+  end
+
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.following.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
   end
 
   private

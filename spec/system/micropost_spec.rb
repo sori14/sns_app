@@ -74,12 +74,13 @@ RSpec.describe "Micropost", type: :system do
     before {
       FactoryBot.create(:micropost, user: user)
       valid_user user
-      visit root_path
+      visit user_path(user)
     }
     it 'should delete a micropost' do
       expect {
         click_link "delete"
         page.driver.browser.switch_to.alert.accept
+        visit user_path(user)
       }.to change(Micropost, :count).by(-1)
     end
   end

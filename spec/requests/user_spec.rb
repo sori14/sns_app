@@ -92,7 +92,7 @@ RSpec.describe "User pages", type: :request do
         user_params = FactoryBot.attributes_for(:user, name: "NewName")
         sign_in_as other_user
         patch user_path(user), params: {id: user.id, user: user_params}
-        expect(user.reload.name).to eq other_user.name
+        expect(user.reload.name).to eq user.name
         expect(response).to redirect_to root_path
       end
     end

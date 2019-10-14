@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Remember Me", type: :request do
-  let(:user){
+  let(:user) {
     FactoryBot.create(:user)
   }
 
@@ -25,25 +25,25 @@ RSpec.describe "Remember Me", type: :request do
   # remember_meのチェックボックスのテスト
   context "login with remembering" do
     it "remembers cookies" do
-      post login_path, params: { session: { email: user.email,
-                                            password: user.password,
-                                             remember_me: '1'} }
-      expect(response.cookies[:remember_token]).to_not eq nil
+      post login_path, params: {session: {email: user.email,
+                                          password: user.password,
+                                          remember_me: '1'}}
+      expect(response.cookies['remember_token']).to_not eq nil
     end
   end
 
   context "login without remembering" do
     it "doesn't remember cookies" do
       # クッキーを保存してログイン
-      post login_path, params: { session: { email: user.email,
-                                            password: user.password,
-                                            remember_me: ' 1'} }
+      post login_path, params: {session: {email: user.email,
+                                          password: user.password,
+                                          remember_me: '1'}}
       delete logout_path
       # クッキーを保存せずにログイン
-      post login_path, params: { session: { email: user.email,
-                                            password: user.password,
-                                            remember_me: '0'} }
-      expect(response.cookies[:remember_token]).to eq nil
+      post login_path, params: {session: {email: user.email,
+                                          password: user.password,
+                                          remember_me: '0'}}
+      expect(response.cookies['remember_token']).to eq nil
     end
   end
 end
