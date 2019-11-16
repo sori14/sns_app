@@ -8,13 +8,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
   # => app/views/users/new.html.erb
 
   # GET /users/:id
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page]).search(params[:search])
   end
+
   # => app/views/users/show.html.erb
 
   # POST /users
@@ -33,6 +35,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+
   # => app/views/users/edit.html.erb
 
   # PATCH /users/:id
@@ -50,7 +53,8 @@ class UsersController < ApplicationController
   def index
     # ページネーションをかける
     # @users = User.all
-    @users = User.paginate(page: params[:page])
+    # 検索機能を追加する
+    @users = User.where(activated: true).paginate(page: params[:page]).search(params[:search])
   end
 
   def destroy

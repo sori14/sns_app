@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'respond_to' do
-    it 'should be column' do
+    it 'should have colums' do
       expect(@user).to respond_to(:admin)
       expect(@user).to respond_to(:microposts)
     end
@@ -255,6 +255,21 @@ RSpec.describe User, type: :model do
           expect(@user.feed).to include(micropost)
         end
       end
+    end
+  end
+
+  describe "search associations" do
+    let(:user) {FactoryBot.create(:user)}
+    before do
+      # ３人のユーザをDBに登録する
+      3.times {FactoryBot.create(:user)}
+    end
+
+    it "should have user name of 'Example user55' by search" do
+      # 検索の実行
+      users = User.all.search(user.name)
+      expect(users.count).to eq 1
+      expect(users.first.name).to eq user.name
     end
   end
 end

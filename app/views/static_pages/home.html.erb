@@ -1,4 +1,7 @@
 <% provide(:title, 'Home') %>
+<% provide(:search_name, "ユーザ検索") %>
+<% provide(:path, root_path) %>
+
 <% if logged_in? %>
   <div class="row">
     <aside class="col-lg-4">
@@ -14,11 +17,14 @@
     </aside>
     <div class="col-lg-8">
       <h3>Micropost Feed</h3>
+
+      <!-- マイクロポスト検索機能 -->
+      <%= render 'users/search' %>
       <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>
-<div class="text-center jumbotron">
+  <div class="text-center jumbotron">
     <h1>Welcome to the Sample App</h1>
     <p>
       This is the home page for the

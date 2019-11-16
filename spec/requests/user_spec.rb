@@ -32,7 +32,27 @@ RSpec.describe "User pages", type: :request do
     end
   end
 
-  describe "#edit" do
+  describe "GET #index" do
+    # 認可されたユーザの場合
+    context "as an authenticated user" do
+      it "should successfully respond" do
+        sign_in_as user
+        get users_path
+        expect(response).to be_successful
+        expect(response).to have_http_status(200)
+      end
+    end
+
+    # ログインしていないユーザの場合
+    context "as a guest" do
+      it "should redirect to the login page" do
+        get users_path
+        expect(response).to redirect_to login_path
+      end
+    end
+  end
+
+  describe "GET #edit" do
     # 認可されたユーザとして
     context "as an authorized" do
       it "responds successfully" do
@@ -63,7 +83,7 @@ RSpec.describe "User pages", type: :request do
     end
   end
 
-  describe "#update" do
+  describe "PATCH #update" do
     # 認可されたユーザーの場合
     context "as authorized user" do
       # ユーザを更新できること
@@ -98,8 +118,8 @@ RSpec.describe "User pages", type: :request do
     end
   end
 
-  describe "#destroy" do
-    # 認可されたユーザとして
+  describe "DELETE #destroy" do
+    # 認可されたユーザの場合
     context "as an authorized user" do
       it "deletes a user" do
         sign_in_as user
@@ -118,7 +138,7 @@ RSpec.describe "User pages", type: :request do
       end
     end
 
-    # ゲストとして
+    # ゲストユーザの場合
     context "as a guest" do
       it "return a 302 response" do
         delete user_path(user), params: {id: user.id}
@@ -132,7 +152,7 @@ RSpec.describe "User pages", type: :request do
     end
   end
 
-  describe "#create" do
+  describe "POST #create" do
     include ActiveJob::TestHelper
 
     it "is invalid with invalid signup information" do
@@ -180,6 +200,4 @@ RSpec.describe "User pages", type: :request do
       end
     end
   end
-
-
 end

@@ -42,4 +42,17 @@ RSpec.describe Micropost, type: :model do
       expect(@micropost).to be_invalid
     end
   end
+
+  describe "search association" do
+    before do
+      3.times {FactoryBot.create(:micropost,user: user)}
+    end
+
+    it "should have micropost content of 'Lorem ipsum 2' by search" do
+      microposts = user.microposts.search("Lorem ipsum 2")
+      binding.pry
+      expect(microposts.count).to eq 1
+      expect(microposts.first.content).to eq "Lorem ipsum 2"
+    end
+  end
 end

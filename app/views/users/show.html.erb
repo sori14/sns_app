@@ -1,4 +1,7 @@
 <% provide(:title, @user.name) %>
+<% provide(:search_name, "マイクロポスト検索") %>
+<% provide(:path, @user) %>
+
 <div class="row">
   <aside class="col-lg-4">
     <section class="user_info">
@@ -14,6 +17,10 @@
   <div class="col-lg-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
+
+      <!-- マイクロポスト検索機能 -->
+      <%= render 'users/search' %>
+
       <h4>Microposts(<%= @user.microposts.count %>)</h4>
       <ol class="microposts">
         <%= render @microposts %>

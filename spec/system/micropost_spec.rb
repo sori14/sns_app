@@ -65,8 +65,6 @@ RSpec.describe "Micropost", type: :system do
         expect {click_button "Post"}.to change(Micropost, :count).by(1)
       end
     end
-
-
   end
 
   describe "micropost destruction" do
@@ -82,6 +80,29 @@ RSpec.describe "Micropost", type: :system do
         page.driver.browser.switch_to.alert.accept
         visit user_path(user)
       }.to change(Micropost, :count).by(-1)
+    end
+  end
+
+  describe "micropost search" do
+    let(:user) {FactoryBot.create(:user)}
+    before do
+      @micropost_array = []
+      3.times {
+        @micropost_array.push(FactoryBot.create(:micropost, user: user))
+      }
+      valid_user user
+      visit user_path(user)
+    end
+
+    it "should successfully search" do
+      fill_in "search", with: "Lorem ipsum 2"
+      click_button "Search"
+      expect(page).to have_selector("ol", text: "Lorem ipsum 2")
+      @micropost_array.each do |micropost|
+        if micropost.content != "Lorem ipsum 2"
+          expect(page).to_not have_selector("ol", text: micropost.content)
+        end
+      end
     end
   end
 end

@@ -106,4 +106,29 @@ RSpec.describe "User pages", type: :system do
       end
     end
   end
+
+  describe "index pages" do
+    let(:user) {FactoryBot.create(:user)}
+
+    describe "search button" do
+      before {
+        @users_array = []
+        3.times {
+          @users_array.push(FactoryBot.create(:user))
+        }
+        valid_user user
+        visit users_path
+      }
+
+      it "should successfully search" do
+        fill_in "search", with: user.name
+        click_button "Search"
+        expect(page).to have_selector("li", text: user.name)
+        # 検索外のユーザは表示されていないことを確認
+        @users_array.each do |user|
+          expect(page).to_not have_selector("li", text: user.name)
+        end
+      end
+    end
+  end
 end
