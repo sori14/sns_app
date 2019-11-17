@@ -5,9 +5,9 @@
 $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
-  -moz-box-sizing:    border-box;
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
+  box-sizing: border-box;
 }
 
 /* universal */
@@ -129,6 +129,7 @@ input {
 
 #error_explanation {
   color: red;
+
   ul {
     color: red;
     margin: 0 0 30px 0;
@@ -138,6 +139,7 @@ input {
 .field_with_errors {
   input {
     @extend .is-invalid;
+
     .form-control {
       color: red;
     }
@@ -147,6 +149,7 @@ input {
 .checkbox {
   margin-top: -10px;
   margin-bottom: 10px;
+
   span {
     margin-left: 10px;
     font-weight: normal;
@@ -164,18 +167,22 @@ aside {
   section.user_info {
     margin-top: 20px;
   }
+
   section {
     padding: 10px 0;
     margin-top: 20px;
+
     &:first-child {
       border: 0;
       padding-top: 0;
     }
+
     span {
       display: block;
       margin-bottom: 3px;
       line-height: 1;
     }
+
     h1 {
       font-size: 1.4em;
       text-align: left;
@@ -200,6 +207,7 @@ aside {
 .users {
   list-style: none;
   margin: 0;
+
   li {
     overflow: auto;
     padding: 10px 0;
@@ -212,27 +220,33 @@ aside {
 .microposts {
   list-style: none;
   padding: 0;
+
   ol {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
+
   .user {
     margin-top: 5em;
     padding-top: 0;
   }
+
   .content {
     display: block;
     margin-left: 60px;
+
     img {
       display: block;
       padding: 5px 0;
     }
   }
+
   .timestamp {
     color: $gray-600;
     display: block;
     margin-left: 60px;
   }
+
   .gravatar {
     float: left;
     margin-right: 10px;
@@ -249,6 +263,7 @@ aside {
 
 span.picture {
   margin-top: 10px;
+
   input {
     border: 0;
   }
@@ -258,20 +273,24 @@ span.picture {
   overflow: auto;
   margin-top: 0;
   padding: 0;
+
   a {
     float: left;
     padding: 0 10px;
     border-left: 1px solid $gray-600;
     color: gray;
+
     &:first-child {
       padding-left: 0;
       border: 0;
     }
+
     &:hover {
       text-decoration: none;
       color: blue;
     }
   }
+
   strong {
     display: block;
   }
@@ -280,9 +299,11 @@ span.picture {
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
+
   .gravatar {
     margin: 1px 1px;
   }
+
   a {
     padding: 0;
   }
