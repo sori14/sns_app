@@ -1,0 +1,1 @@
+$("#micropost-<%= @micropost.id %> .reply").html("<%= escape_javascript(render "replies/reply", micropost: @micropost) %>")

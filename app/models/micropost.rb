@@ -1,12 +1,13 @@
 class Micropost < ApplicationRecord
   belongs_to :user
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> {order(created_at: :desc)}
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true, length: {maximum: 140}
   validate :picture_size
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
+  has_many :replies, dependent: :destroy
 
 
   # 検索機能
@@ -31,6 +32,11 @@ class Micropost < ApplicationRecord
   # 現在のユーザがいいねしてたら、trueを返す
   def like?(user)
     like_users.include?(user)
+  end
+
+  # マイクロポストにコメントする
+  def reply(user, content)
+    replies.create(user_id: user.id, content: content)
   end
 
   private
