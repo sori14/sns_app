@@ -24,7 +24,7 @@ class RoomController < ApplicationController
     unless @room.room_exists?
       if @room.save
         flash[:success] = "Room added!"
-        redirect_to room_index_path
+        redirect_to room_path(@room)
       else
         flash[:danger] = "Add room failed!"
         redirect_to new_room_path

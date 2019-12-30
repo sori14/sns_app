@@ -1,6 +1,16 @@
 <h2><%= room_name(@room) %></h2>
 <div id="messages" room_id="<%= @room.id %>" user_id="<%= current_user.id %>">
-  <%= render @room.messages %>
+  <% @room.messages.each do |message| %>
+    <% if current_user.id == message.user.id%>
+      <div class="text-left">
+        <%= render message %>
+      </div>
+    <% else %>
+      <div class="text-right">
+        <%= render message %>
+      </div>
+    <% end %>
+  <% end %>
 </div>
 <%= form_with model: @message, url: '#', id: 'new_message' do |f| %>
   <%= hidden_field_tag :room_id, @room.id %>

@@ -13,6 +13,14 @@
     <section class="stats">
       <%= render 'shared/stats' %>
     </section>
+    <section class="dm">
+      <% room = room(current_user, @user) %>
+      <% unless room.empty? %>
+        <%= link_to 'DMを送る', room_path(id: room.ids) %>
+      <% else %>
+        <%= link_to 'DMを送る（ルーム無し）', room_index_path(params: {room: {name: @user.name}}), method: 'post' %>
+      <% end %>
+    </section>
   </aside>
   <div class="col-lg-8">
     <%= render 'follow_form' if logged_in? %>
