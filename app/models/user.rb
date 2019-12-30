@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :followers, through: 'passive_relationships', source: 'follower'
   has_many :likes, dependent: :destroy
   has_many :replies, dependent: :destroy
+  has_many :retweet, dependent: :destroy
+  has_many :rooms, dependent: :destroy
+  # has_many :messages, dependent: :destroy
   before_save :downcase_email
   before_create :create_activation_digest
   attr_accessor :remember_token, :activation_token, :reset_token
@@ -94,11 +97,18 @@ class User < ApplicationRecord
   end
 
   # ユーザのフィード（そのユーザのマイクロポストを全てを取得する）
-  # (追記) ユーザのステータスフィードに変更
+  # (追記) ユーザがフォローしているユーザのフィードを追加
   def feed
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     # SQLインジェクション対策
     Micropost.where("user_id IN (#{following_ids}) OR user_id = :user_id", user_id: self.id)
+  end
+
+  # 自分のマイクロポストとリツイートしたマイクロポストの取得
+  def myfeed
+    retweet_ids = "SELECT micropost_id FROM retweets WHERE user_id = :user_id"
+    # SQLインジェクション対策
+    Micropost.where("id IN (#{retweet_ids}) OR user_id = :user_id", user_id: self.id)
   end
 
   # ユーザをフォローする

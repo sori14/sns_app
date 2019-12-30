@@ -8,6 +8,8 @@ class Micropost < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_users, through: :likes, source: :user
   has_many :replies, dependent: :destroy
+  has_many :retweets, dependent: :destroy
+  has_many :retweet_users, through: :retweets, source: :user
 
 
   # 検索機能
@@ -37,6 +39,16 @@ class Micropost < ApplicationRecord
   # マイクロポストにコメントする
   def reply(user, content)
     replies.create(user_id: user.id, content: content)
+  end
+
+  # マイクロポストをリツイートする
+  def retweet(user)
+    retweets.create(user_id: user.id)
+  end
+
+  # 現在のユーザがリツイートしてたら、trueを返す
+  def retweet?(user)
+    self.retweet_users.include?(user)
   end
 
   private

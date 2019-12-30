@@ -1,0 +1,9 @@
+<h2><%= room_name(@room) %></h2>
+<div id="messages" room_id="<%= @room.id %>" user_id="<%= current_user.id %>">
+  <%= render @room.messages %>
+</div>
+<%= form_with model: @message, url: '#', id: 'new_message' do |f| %>
+  <%= hidden_field_tag :room_id, @room.id %>
+  <%= f.text_field :content, class: 'form-control', id: 'message_content' %>
+  <%= f.submit "送信", class: 'btn btn-primary', id: 'button' %>
+<% end %>

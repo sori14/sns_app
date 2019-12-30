@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
+  root 'static_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
-  root 'static_pages#home'
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
@@ -24,7 +22,12 @@ Rails.application.routes.draw do
   resources :password_resets, only: [:new, :create, :edit, :update]
   resources :microposts, only: [:create, :destroy] do
     resources :replies, only: [:create]
+    resources :retweets, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
+  resources :room
+
+  # route.rbに定義することで、フロントとバックエンドお互いに監視できる
+  mount ActionCable.server => "/cable"
 end

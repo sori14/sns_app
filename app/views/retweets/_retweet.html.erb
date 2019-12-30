@@ -1,0 +1,12 @@
+<span class="retweet">
+  <% if micropost.retweet?(current_user) %>
+    <%= link_to icon("fas", "retweet"),
+                micropost_retweet_path(micropost_id: micropost.id, id: micropost.retweets.where(user_id: current_user.id).first.id),
+                method: :delete %>
+  <% else %>
+    <%= link_to icon("fas", "retweet"),
+                micropost_retweets_path(micropost_id: micropost.id),
+                method: :post %>
+  <% end %>
+  <%= micropost.retweets.count %>
+</span>

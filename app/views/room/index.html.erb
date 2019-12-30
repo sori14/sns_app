@@ -1,0 +1,4 @@
+<% provide(:title, 'Sign up') %>
+<h1>DM</h1>
+<%= link_to "新しいメッセージルームを作成", new_room_path, class: "btn btn-primary" %>
+<ul><%= render :partial => "room", :collection => @rooms %></ul>

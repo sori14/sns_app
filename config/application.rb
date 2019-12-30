@@ -14,6 +14,8 @@ module SnsApp
     config.action_view.embed_authenticity_token_in_remote_forms = true
 
     config.generators do |g|
+      # 生のJavascriptを生成する
+      g.javascript_engine :js
       g.test_framework :rspec,
                        fixtures: true,
                        view_specs: false,

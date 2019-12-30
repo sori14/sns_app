@@ -1,0 +1,10 @@
+<h1>Create messages room</h1>
+<div class="row">
+  <div class="col-lg-6 offset-lg-3">
+    <%= form_with model: @room, url: room_index_path, local: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.submit "作成", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

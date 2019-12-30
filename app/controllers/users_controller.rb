@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page]).search(params[:search])
+    @microposts = @user.myfeed.paginate(page: params[:page]).search(params[:search]).reorder(updated_at: :DESC)
   end
 
   # => app/views/users/show.html.erb
