@@ -17,3 +17,7 @@ test:
 production:
   <<: *default
   database: sns_app_production
+  username: <%= ENV['RAILS_DATEBASE_USERNAME'] %>
+  password: <%= ENV['RAILS_DATEBASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+  host: <%= ENV['RAILS_DATEBASE_HOST'] %>

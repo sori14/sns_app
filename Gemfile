@@ -67,6 +67,12 @@ group :development, :test do
   # IDEのデバッカー
   gem 'ruby-debug-ide'
   gem 'debase'
+
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
 end
 
 group :development do
@@ -102,3 +108,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# 本番環境で使用するAPサーバのunicorn
+group :production, :staging do
+  gem 'unicorn'
+end
+
