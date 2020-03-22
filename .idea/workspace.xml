@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/65edf81f-d062-486a-ad50-b5b9b78bab00.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/65edf81f-d062-486a-ad50-b5b9b78bab00.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9b2976fb-5355-4a80-bd08-99ca0f3530ed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9b2976fb-5355-4a80-bd08-99ca0f3530ed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sns_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sns_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/environments/production.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/environments/production.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -298,7 +291,7 @@
       <workItem from="1584593805234" duration="2656000" />
       <workItem from="1584604526267" duration="129000" />
       <workItem from="1584604736901" duration="203000" />
-      <workItem from="1584605285974" duration="13883000" />
+      <workItem from="1584605285974" duration="14593000" />
     </task>
     <servers />
   </component>

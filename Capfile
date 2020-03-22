@@ -5,6 +5,11 @@ require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 
+# デプロイ時にエラーの対処で追記
+require 'capistrano/scm/git'
+install_plugin Capistrano::SCM::Git
+
+
 # require 'capistrano3/unicorn'
 # require 'capistrano/rvm'
 # require 'capistrano/chruby'
