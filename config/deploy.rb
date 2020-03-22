@@ -15,7 +15,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 # 保持するバージョンの個数
 set :keep_releases, 5
 # rubyのバージョン
-set :rbenv_ruby, '2.5.1p57'
+set :rbenv_ruby, '2.5.1'
 # 出力するログのレベル
 set :log_level, :debug
 # コネクション継続
