@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sns_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sns_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/deploy.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/deploy.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,7 +291,7 @@
       <workItem from="1584593805234" duration="2656000" />
       <workItem from="1584604526267" duration="129000" />
       <workItem from="1584604736901" duration="203000" />
-      <workItem from="1584605285974" duration="20605000" />
+      <workItem from="1584605285974" duration="26113000" />
     </task>
     <servers />
   </component>
@@ -339,9 +340,17 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2020" y="100" width="1720" height="1000" key="dock-window-1" timestamp="1586584877978">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2020" y="100" width="1720" height="1000" key="dock-window-1/0.23.1920.1177/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586584877978" />
     <state x="2545" y="271" width="670" height="676" key="search.everywhere.popup" timestamp="1586579144273">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2545" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586579144273" />
+    <state x="2610" y="519" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586585786760">
+      <screen x="1920" y="0" width="1920" height="1200" />
+    </state>
+    <state x="2610" y="519" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1920.1200/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586585786760" />
   </component>
 </project>
