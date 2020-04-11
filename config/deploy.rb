@@ -4,12 +4,14 @@ lock "3.12.1"
 set :application, "sns_app"
 # cloneするgitのレポジトリ
 set :repo_url, "git@github.com:sori14/sns_app.git"
+# デプロイに使うユーザ
+set :user, "sori14"
 # deployするブランチ
 set :branch, 'master'
 # deploy先のディレクトリ
 set :deploy_to, '/var/www/rails/sns_app'
 # シンボリックリンクをはるファイル
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+# set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
 # シンボリックリンクをはるフォルダ
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 # 保持するバージョンの個数
@@ -19,7 +21,11 @@ set :rbenv_ruby, '2.5.1'
 # 出力するログのレベル
 set :log_level, :debug
 # コネクション継続
-set :ssh_options, :keepalive => true
+set :ssh_options, {
+    keepalive: true,
+    user: fetch(:user),
+    keys: %w(~/.ssh/github_id_rsa.pub)
+}
 
 namespace :deploy do
   desc 'Restart application'
