@@ -4,8 +4,6 @@ lock "3.13.0"
 set :application, "sns_app"
 # cloneするgitのレポジトリ
 set :repo_url, "git@github.com:sori14/sns_app.git"
-# デプロイに使うユーザ
-set :user, "sori14"
 # deployするブランチ
 set :branch, 'master'
 # deploy先のディレクトリ
