@@ -67,15 +67,6 @@ group :development, :test do
   # IDEのデバッカー
   gem 'ruby-debug-ide'
   gem 'debase'
-
-  # Capistrano
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  # Capistranoの追加gem
-  gem 'ed25519'
-  gem 'bcrypt_pbkdf'
 end
 
 group :development do
@@ -115,5 +106,14 @@ gem 'tzinfo-data'
 # 本番環境で使用するAPサーバのunicorn
 group :production, :staging do
   gem 'unicorn'
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  # Capistranoの追加gem
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
+  gem 'capistrano3-unicorn'
 end
 
