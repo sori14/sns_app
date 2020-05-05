@@ -1,3 +1,6 @@
+# 環境指定
+set :rails_env, 'production'
+
 # EC2サーバーのIP、EC2サーバーにログインするユーザー名、サーバーのロールを記述
 server '18.177.96.5', user: 'sorimachi', roles: %w{app db web}
 
