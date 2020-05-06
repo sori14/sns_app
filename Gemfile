@@ -114,6 +114,8 @@ end
 gem 'tzinfo-data'
 
 # 本番環境で使用するAPサーバのunicorn
+# unicorn_railsコマンドが実行されにないので、バージョン下げた
+# https://teratail.com/questions/178669
 group :production, :staging do
   gem 'unicorn', '~> 5.4.1'
 end

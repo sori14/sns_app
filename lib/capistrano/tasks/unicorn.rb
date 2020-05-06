@@ -6,9 +6,11 @@ namespace :unicorn do
   end
 
 #unicornをスタートさせるメソッド
+# rails_unicornコマンドの参照先が違ったため、「bundle exec」を追加
+# 参考記事がunicornコマンドだったので、変更。
   def start_unicorn
     within current_path do
-      execute :bundle, :exec, :rails_unicorn, "-c #{fetch(:unicorn_config)} -E #{fetch(:rails_env)} -D"
+      execute :bundle, :exec, :unicorn, "-c #{fetch(:unicorn_config)} -E #{fetch(:rails_env)} -D"
     end
   end
 
