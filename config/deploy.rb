@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock "3.13.0"
+lock "3.14.0"
 # デプロイするアプリケーション名
 set :application, "sns_app"
 # cloneするgitのレポジトリ
@@ -17,6 +17,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :keep_releases, 5
 # rubyのバージョン
 set :rbenv_ruby, '2.5.1'
+# /
+
 # 出力するログのレベル
 set :log_level, :debug
 # コネクション継続
