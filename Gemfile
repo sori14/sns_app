@@ -76,6 +76,16 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Capistrano
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  # Capistranoの追加gem
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
+  gem 'capistrano3-unicorn'
 end
 
 group :test do
@@ -106,14 +116,5 @@ gem 'tzinfo-data'
 # 本番環境で使用するAPサーバのunicorn
 group :production, :staging do
   gem 'unicorn'
-  # Capistrano
-  gem 'capistrano'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano-rbenv'
-  # Capistranoの追加gem
-  gem 'ed25519'
-  gem 'bcrypt_pbkdf'
-  gem 'capistrano3-unicorn'
 end
 
