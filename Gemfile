@@ -115,6 +115,6 @@ gem 'tzinfo-data'
 
 # 本番環境で使用するAPサーバのunicorn
 group :production, :staging do
-  gem 'unicorn'
+  gem 'unicorn', '~> 5.4.1'
 end
 
