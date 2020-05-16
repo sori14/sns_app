@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sns_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sns_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +40,57 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: development" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: development" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: development" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sns_app_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: development" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sns_app_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Rails sns_app: production" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: test" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: test" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: test" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sns_app_development: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: test" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sns_app_test: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Rails sns_app: test" type="feb32156:DbDataSourceImpl" />
+        <item name="schema" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="sns_app_test: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="users: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -291,7 +348,8 @@
       <workItem from="1584605285974" duration="45582000" />
       <workItem from="1587201147589" duration="8440000" />
       <workItem from="1588672925795" duration="13045000" />
-      <workItem from="1588744779846" duration="14449000" />
+      <workItem from="1588744779846" duration="56671000" />
+      <workItem from="1589595951024" duration="1442000" />
     </task>
     <servers />
   </component>
@@ -340,15 +398,24 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="615" y="233" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589018090229">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="615" y="233" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.23.1920.1177/0.23.1920.1177@0.23.1920.1177" timestamp="1589018090229" />
     <state x="2020" y="100" width="1720" height="1000" key="dock-window-1" timestamp="1586584877978">
       <screen x="1920" y="0" width="1920" height="1200" />
     </state>
     <state x="2020" y="100" width="1720" height="1000" key="dock-window-1/0.23.1920.1177/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586584877978" />
-    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup" timestamp="1588996668491">
+    <state x="574" y="247" width="771" height="729" key="find.popup" timestamp="1589009701698">
+      <screen x="0" y="23" width="1920" height="1177" />
+    </state>
+    <state x="574" y="247" width="771" height="729" key="find.popup/1920.23.1920.1177/0.23.1920.1177@0.23.1920.1177" timestamp="1589009701698" />
+    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup" timestamp="1589103634241">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="2545" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586663800485" />
-    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.0.1920.1200/0.0.1920.1200@0.0.1920.1200" timestamp="1588996668491" />
+    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.0.1920.1200/0.0.1920.1200@0.0.1920.1200" timestamp="1589100528039" />
+    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.23.1920.1177/0.0.1920.1200@0.0.1920.1200" timestamp="1589103634241" />
     <state x="625" y="289" width="670" height="664" key="search.everywhere.popup/1920.23.1920.1177/0.23.1920.1177@0.23.1920.1177" timestamp="1588752505800" />
     <state x="2610" y="519" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586585786760">
       <screen x="1920" y="0" width="1920" height="1200" />

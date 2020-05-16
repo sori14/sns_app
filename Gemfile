@@ -97,6 +97,8 @@ group :test do
 
   # Rspec
   gem 'rspec-rails'
+  # Rubocop
+  gem 'rubocop'
 
   # FactoryBot(テストデータの生成ツール)
   gem 'factory_bot_rails'
