@@ -98,7 +98,7 @@ group :test do
   # Rspec
   gem 'rspec-rails'
   # Rubocop
-  gem 'rubocop'
+  gem 'rubocop', require: false
   # 設定ファイルの読み込みに必要なgem
   gem 'rubocop-rails'
 
