@@ -50,7 +50,6 @@ RSpec.describe Micropost, type: :model do
 
     it "should have micropost content of 'Lorem ipsum 2' by search" do
       microposts = user.microposts.search("Lorem ipsum 2")
-      binding.pry
       expect(microposts.count).to eq 1
       expect(microposts.first.content).to eq "Lorem ipsum 2"
     end
