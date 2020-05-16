@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/system/micropost_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/system/micropost_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -343,7 +342,7 @@
       <workItem from="1587201147589" duration="8440000" />
       <workItem from="1588672925795" duration="13045000" />
       <workItem from="1588744779846" duration="56671000" />
-      <workItem from="1589595951024" duration="17443000" />
+      <workItem from="1589595951024" duration="17865000" />
     </task>
     <servers />
   </component>
