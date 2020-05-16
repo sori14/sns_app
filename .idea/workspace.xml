@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.generators" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.generators" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sns_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sns_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/_header.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -349,7 +342,7 @@
       <workItem from="1587201147589" duration="8440000" />
       <workItem from="1588672925795" duration="13045000" />
       <workItem from="1588744779846" duration="56671000" />
-      <workItem from="1589595951024" duration="1442000" />
+      <workItem from="1589595951024" duration="2224000" />
     </task>
     <servers />
   </component>
@@ -398,6 +391,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="644" y="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589598819473">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="644" y="410" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1200/0.0.1920.1200@0.0.1920.1200" timestamp="1589598819473" />
     <state x="615" y="233" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1589018090229">
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
