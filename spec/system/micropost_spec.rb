@@ -83,27 +83,26 @@ RSpec.describe "Micropost", type: :system do
     end
   end
 
-  #describe "micropost search" do
-  # let(:user) {FactoryBot.create(:user)}
-  # before do
-  #   @micropost_array = []
-  #   3.times {
-  #     @micropost_array.push(FactoryBot.create(:micropost, user: user))
-  #   }
-  #   valid_user user
-  #   visit user_path(user)
-  # end
+  describe "micropost search" do
+    let(:user) {FactoryBot.create(:user)}
+    before do
+      @micropost_array = []
+      3.times {
+        @micropost_array.push(FactoryBot.create(:micropost, user: user))
+      }
+      valid_user user
+      visit user_path(user)
+    end
 
-    #CircleCIで動かなかったため、コメントアウト
-    #it "should successfully search" do
-    #  fill_in "search", with: "Lorem ipsum 2"
-    #  click_button "Search"
-    #  expect(page).to have_selector("ol", text: "Lorem ipsum 2")
-    #  @micropost_array.each do |micropost|
-    #    if micropost.content != "Lorem ipsum 2"
-    #      expect(page).to_not have_selector("ol", text: micropost.content)
-    #    end
-    #  end
-    #end
-  #end
+    it "should successfully search" do
+      fill_in "search", with: "Lorem ipsum 2"
+      click_button "Search"
+      expect(page).to have_selector("ol", text: "Lorem ipsum 2")
+      @micropost_array.each do |micropost|
+        if micropost.content != "Lorem ipsum 2"
+          expect(page).to_not have_selector("ol", text: micropost.content)
+        end
+      end
+    end
+  end
 end
