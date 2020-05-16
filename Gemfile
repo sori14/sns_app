@@ -99,6 +99,8 @@ group :test do
   gem 'rspec-rails'
   # Rubocop
   gem 'rubocop'
+  # 設定ファイルの読み込みに必要なgem
+  gem 'rubocop-rails'
 
   # FactoryBot(テストデータの生成ツール)
   gem 'factory_bot_rails'

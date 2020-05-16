@@ -474,6 +474,10 @@ GEM
       rexml
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-debug-ide (0.7.2)
       rake (>= 0.8.1)
     ruby-progressbar (1.10.1)
@@ -601,6 +605,7 @@ DEPENDENCIES
   rails-i18n
   rspec-rails
   rubocop
+  rubocop-rails
   ruby-debug-ide
   sass-rails (~> 5.0)
   selenium-webdriver
