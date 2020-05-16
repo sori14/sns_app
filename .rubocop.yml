@@ -19,6 +19,8 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
+    # ローカルのgemは対象外にする。
+    - 'vendor/**/*'
 
 # 日本語でのコメントを許可
 AsciiComments:
