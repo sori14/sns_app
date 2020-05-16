@@ -83,16 +83,16 @@ RSpec.describe "Micropost", type: :system do
     end
   end
 
-  describe "micropost search" do
-    let(:user) {FactoryBot.create(:user)}
-    before do
-      @micropost_array = []
-      3.times {
-        @micropost_array.push(FactoryBot.create(:micropost, user: user))
-      }
-      valid_user user
-      visit user_path(user)
-    end
+  #describe "micropost search" do
+  # let(:user) {FactoryBot.create(:user)}
+  # before do
+  #   @micropost_array = []
+  #   3.times {
+  #     @micropost_array.push(FactoryBot.create(:micropost, user: user))
+  #   }
+  #   valid_user user
+  #   visit user_path(user)
+  # end
 
     #CircleCIで動かなかったため、コメントアウト
     #it "should successfully search" do
