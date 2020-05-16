@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83b640b0-91db-40c9-9350-2d3608242578" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/like_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/message_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/reply_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/retweet_spec.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/models/room_spec.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -348,7 +343,7 @@
       <workItem from="1587201147589" duration="8440000" />
       <workItem from="1588672925795" duration="13045000" />
       <workItem from="1588744779846" duration="56671000" />
-      <workItem from="1589595951024" duration="12585000" />
+      <workItem from="1589595951024" duration="14341000" />
     </task>
     <servers />
   </component>
@@ -414,11 +409,11 @@
       <screen x="0" y="23" width="1920" height="1177" />
     </state>
     <state x="574" y="247" width="771" height="729" key="find.popup/1920.23.1920.1177/0.23.1920.1177@0.23.1920.1177" timestamp="1589009701698" />
-    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup" timestamp="1589616373474">
+    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup" timestamp="1589617421196">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="2545" y="271" width="670" height="676" key="search.everywhere.popup/0.0.1920.1200/1920.0.1920.1200@1920.0.1920.1200" timestamp="1586663800485" />
-    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.0.1920.1200/0.0.1920.1200@0.0.1920.1200" timestamp="1589616373474" />
+    <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.0.1920.1200/0.0.1920.1200@0.0.1920.1200" timestamp="1589617421196" />
     <state x="625" y="271" width="670" height="677" key="search.everywhere.popup/1920.23.1920.1177/0.0.1920.1200@0.0.1920.1200" timestamp="1589103634241" />
     <state x="625" y="289" width="670" height="664" key="search.everywhere.popup/1920.23.1920.1177/0.23.1920.1177@0.23.1920.1177" timestamp="1588752505800" />
     <state x="2610" y="519" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1586585786760">
