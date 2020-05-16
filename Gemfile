@@ -112,6 +112,9 @@ group :test do
   # assignsメソットの使用のため
   # コントローラー内のインスタンス変数にアクセスできる
   gem 'rails-controller-testing'
+
+  # circleCIでRSpecを走らせるgem
+  gem 'rspec_junit_formatter'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
