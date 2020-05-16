@@ -47,8 +47,8 @@ jobs:
       - run: mv config/database.yml.ci config/database.yml
 
       # Database setup
-      - run: rails db:create
-      - run: rails db:schema:load
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
 
       # rubocopを走らせる記述です。
       - run:
