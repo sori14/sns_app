@@ -50,13 +50,14 @@ jobs:
       # Database setup
       - run: bundle exec rails db:create
       - run: bundle exec rails db:schema:load
+      - run: bundle exec rails db:seed
 
       # rubocopを走らせる記述です。
       - run:
           name: Rubocop
           command: bundle exec rubocop --enable-pending-cops
 
-      # Align chrome-driver's version installed by chromedriver-helper
+      # Align chrome-driver's version installed by ChromeDriver-helper
       - run:
           name: Update ChromeDriver Version
           command: |
